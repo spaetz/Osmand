@@ -49,12 +49,15 @@ public class City extends MapObject {
 
 	private CityType type = null;
 	// Be attentive ! Working with street names ignoring case
-	private Map<String, Street> streets = new TreeMap<String, Street>(Collator.getInstance());
+	private final Map<String, Street> streets;
 	private String isin = null;
 	private String postcode = null;
 
 	public City(Node el) {
 		super(el);
+		Collator instance = Collator.getInstance();
+		instance.setStrength(Collator.PRIMARY);
+		streets = new TreeMap<String, Street>(instance);
 		type = CityType.valueFromString(el.getTag(OSMTagKey.PLACE));
 		isin = el.getTag(OSMTagKey.IS_IN);
 		isin = isin != null ? isin.toLowerCase() : null;
@@ -64,6 +67,9 @@ public class City extends MapObject {
 		if(type == null) {
 			throw new NullPointerException();
 		}
+		Collator instance = Collator.getInstance();
+		instance.setStrength(Collator.PRIMARY);
+		streets = new TreeMap<String, Street>(instance);
 		this.type = type;
 	}
 	
@@ -71,7 +77,11 @@ public class City extends MapObject {
 		this.type = null;
 		this.name = this.enName = postcode;
 		this.id = id;
+		Collator instance = Collator.getInstance();
+		instance.setStrength(Collator.PRIMARY);
+		streets = new TreeMap<String, Street>(instance);
 	}
+	
 	
 	public static City createPostcode(String postcode){
 		return new City(postcode, POSTCODE_INTERNAL_ID--);

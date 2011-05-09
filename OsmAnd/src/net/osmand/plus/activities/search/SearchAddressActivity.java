@@ -159,6 +159,7 @@ public class SearchAddressActivity extends Activity {
 		 findViewById(R.id.ResetCity).setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v) {
+					OsmandSettings.setLastSearchedCity(SearchAddressActivity.this, -1L);
 					postcode = null;
 					city = null;
 					street = null;
@@ -299,7 +300,7 @@ public class SearchAddressActivity extends Activity {
 		} else {
 			streetButton.setText(street);
 		}
-		streetButton.setEnabled(!Algoritms.isEmpty(city) || !Algoritms.isEmpty(postcode));
+		streetButton.setEnabled(region != null);
 		
 		buildingButton.setEnabled(!Algoritms.isEmpty(street));
 		((RadioGroup)findViewById(R.id.RadioGroup)).setVisibility(Algoritms.isEmpty(street) ? View.GONE : View.VISIBLE);

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <!--
     	 Disclaimer : 
@@ -201,6 +201,8 @@
 	<string name="osmand_parking_plugin_name">Parking Position Plugin</string>
 	<string name="context_menu_item_add_parking_point">Mark as a parking position</string>
 	<string name="context_menu_item_delete_parking_point">Delete a parking marker</string>
+        <string name="incremental_search_street_in_country">Search street incrementally. At least 3 chars. Can take long time!</string>
+
 	<string name="gpxup_public">Public</string>
 	<string name="gpxup_identifiable">Identifiable</string>
 	<string name="gpxup_trackable">Trackable</string>
@@ -292,6 +294,7 @@
 	<string name="gpx_description_txt">Description</string>
 	<string name="validate_gpx_upload_name_pwd">Please specify OSM user name and password to upload GPX files.</string>
     	<string name="default_buttons_support">Support</string>
+
 	<string name="support_new_features">Support new features</string>
 	<string name="show_ruler_level">Display ruler</string>	
 	<string name="info_button">Info</string>

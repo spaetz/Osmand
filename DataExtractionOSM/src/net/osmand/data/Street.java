@@ -171,4 +171,10 @@ public class Street extends MapObject {
 		this.indexInCity = indexInCity;
 	}
 
+	public String getDisplayName(boolean useEnglishNames) {
+		StringBuilder output = new StringBuilder();
+		output.append(getName(useEnglishNames)).append(" (").append(getCity().getName(useEnglishNames)).append(')');
+		return output.toString();
+	}
+
 }
