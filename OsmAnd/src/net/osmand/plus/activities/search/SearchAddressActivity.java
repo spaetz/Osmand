@@ -159,7 +159,7 @@ public class SearchAddressActivity extends Activity {
 		 findViewById(R.id.ResetCity).setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					OsmandSettings.setLastSearchedCity(SearchAddressActivity.this, -1L);
+					osmandSettings.setLastSearchedCity(-1L,"",null);
 					postcode = null;
 					city = null;
 					street = null;

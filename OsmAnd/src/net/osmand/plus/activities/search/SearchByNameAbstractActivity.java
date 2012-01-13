@@ -419,10 +419,6 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			Collections.sort(list, cmp);
 		}
 
-		public List<T> getList() {
-			return list;
-		}
-		
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View row;
