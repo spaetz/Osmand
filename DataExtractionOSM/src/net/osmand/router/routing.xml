@@ -170,6 +170,9 @@
 		<avoid tag="tracktype" value="grade4" decreasedPriority="0.3"/>
 		<avoid tag="tracktype" value="grade5" decreasedPriority="0.6"/>
 		<avoid tag="access" value="private" decreasedPriority="0.1"/>
+                <!-- Reward dedicated cycle lanes -->
+		<avoid tag="cycleway" value="lane" decreasedPriority="-0.2"/>
+		<avoid tag="cycleway" value="opposite_lane" decreasedPriority="-0.2"/>
 		<avoid tag="bicycle" value="no"/>
 	</routingProfile>
 
